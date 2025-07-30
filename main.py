@@ -4,7 +4,7 @@ import pygame
 
 # Constants
 IS_TRAINING = True
-FPS = 5
+FPS = 1
 
 # Initialize screen
 screen = pygame.display.set_mode(((2 * N_COLS - 1) * TILE_SIZE, (2 * N_ROWS - 1) * TILE_SIZE))
