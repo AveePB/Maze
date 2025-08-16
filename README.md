@@ -74,7 +74,9 @@ A maze can be generated based on the predetermined arrangement of cells with wal
   3. While the wall list isn't empty, choose a random pair from the list.
   <br>
   <br>
-  4. If cell from the pair wasn't visited, then mark wall and cell as the part of the maze. Now add the pair of walls and neigbouring cells to the wall list.
+  4. If cell from the pair wasn't visited, then mark wall and cell as the part of the maze. 
+  <br>
+  Now add the pair of walls and neigbouring cells to the wall list.
 </p>
 <br>
 
