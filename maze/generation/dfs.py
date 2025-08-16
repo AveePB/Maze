@@ -37,7 +37,7 @@ def create(screen=None):
             if row % 2 and col % 2:
                 maze[row][col] = FREE_CELL
 
-    # Create mouse and cheese
+    # Place mouse and cheese
     maze[1][1] = MOUSE
     maze[N_ROWS-2][N_COLS-2] = CHEESE
 
@@ -126,5 +126,5 @@ def create(screen=None):
             drawMaze(screen, maze)
             pygame.display.flip()
             clock.tick(FPS)
-
+    
     return maze

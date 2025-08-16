@@ -7,7 +7,7 @@ It can optionally display the maze generation step-by-step using pygame.
 Author: Michał Zientek
 Date: 2025-08-16
 """
-from maze.consts import N_ROWS, N_COLS, FREE_CELL, CHEESE, MOUSE, WALL, UP, DOWN, LEFT, RIGHT, FPS 
+from maze.consts import N_ROWS, N_COLS, FREE_CELL, CHEESE, MOUSE, WALL, FPS 
 from maze.visualizer import drawMaze
 import numpy as np
 import random
@@ -37,6 +37,8 @@ def create(screen=None):
     row = 2*random.randint(0, N_ROWS // 2 - 1) + 1
     col = 2*random.randint(0, N_COLS // 2 - 1) + 1
     maze[row][col] = FREE_CELL
+    
+    
     __expandMaze(wall_list, row, col)
 
     # Display maze
@@ -63,7 +65,7 @@ def create(screen=None):
         c_row, c_col = cell
 
         # Cell is unvisited
-        if maze[c_row][c_col] == WALL:
+        if maze[c_row][c_col] == WALL or maze[row][col] == MOUSE or maze[row][col] == CHEESE:
             maze[w_row][w_col] = FREE_CELL
             maze[c_row][c_col] = FREE_CELL
             __expandMaze(wall_list, c_row, c_col)
@@ -79,6 +81,22 @@ def create(screen=None):
             drawMaze(screen, maze)
             pygame.display.flip()
             clock.tick(FPS)
+    
+    # Place mouse and cheese
+    maze[1][1] = MOUSE
+    maze[N_ROWS-2][N_COLS-2] = CHEESE
+
+    # Display maze
+    if screen:
+        # Handle user input
+        for event in pygame.event.get():
+            # Close window
+            if event.type == pygame.QUIT:
+                return
+                
+        drawMaze(screen, maze)
+        pygame.display.flip()
+        clock.tick(FPS)
 
     return maze
 

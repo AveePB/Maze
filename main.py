@@ -13,8 +13,8 @@ pygame.display.set_icon(pygame.image.load(MAZE_IMG_PATH))
 pygame.display.set_caption('Maze')
 clock = pygame.time.Clock()
 
-maze = prim. create(screen)
-print(maze)
+maze = prim.create(screen)
+while True: ...
 
 pygame.quit()
     
