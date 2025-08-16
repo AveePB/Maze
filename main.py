@@ -14,7 +14,6 @@ pygame.display.set_caption('Maze')
 clock = pygame.time.Clock()
 
 maze = prim.create(screen)
-while True: ...
 
 pygame.quit()
     
