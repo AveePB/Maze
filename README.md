@@ -11,7 +11,7 @@ This repository is about the problem of generating and solving mazes. We will us
 
 ## Introduction
 <p align="left">
-  <img src="./assets/image/fresh-maze.png" alt="Fresh Maze" width="300" align="right" style="padding-left: 10px">
+  <img src="./assets/image/fresh-maze.png" alt="Fresh Maze" width="300" align="right">
   I created this repository with the goal of writing my first scientific article.  
   I want to explore the topic of mazes: how do we generate them?  
   What does it take to solve one?  
@@ -33,7 +33,7 @@ A maze can be generated based on the predetermined arrangement of cells with wal
 
 ### Depth-first search (DFS)
 <p align="left">
-  <img src="./assets/gif/dfs.gif" alt="dfs" width="200" align="left" style="padding-right: 15px">
+  <img src="./assets/gif/dfs.gif" alt="dfs" width="200" align="right">
   <br>
   1. Start with large grid of cells starting with four walls. 
   <br>
@@ -49,7 +49,7 @@ A maze can be generated based on the predetermined arrangement of cells with wal
 
 ### Kruskal's algorithm
 <p align="left">
-  <img src="./assets/gif/kruskal.gif" alt="dfs" width="200" align="left" style="padding-right: 15px">
+  <img src="./assets/gif/kruskal.gif" alt="dfs" width="200" align="right">
   <br>
   1. Start with large grid of cells starting with four walls. Create a list of walls and a set for each cell, each containing just that one cell. 
   <br>
@@ -64,7 +64,7 @@ A maze can be generated based on the predetermined arrangement of cells with wal
 
 ### Prim's algorithm
 <p align="left">
-  <img src="./assets/gif/prim.gif" alt="dfs" width="200" align="left" style="padding-right: 15px">
+  <img src="./assets/gif/prim.gif" alt="dfs" width="200" align="right">
   1. Start with grid full of walls.
   <br>
   <br>
