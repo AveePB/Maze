@@ -20,4 +20,4 @@ MAZE_IMG_PATH = './assets/image/maze.png'
 CHEESE_IMG_PATH = './assets/image/cheese.png'
 MOUSE_IMG_PATH = './assets/image/mouse.png'
 
-FPS = 10
+FPS = 100

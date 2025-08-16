@@ -65,7 +65,7 @@ def create(screen=None):
     
     # Shuffle walls and start maze generation
     random.shuffle(wall_list)
-    while union_find.find(union_find.cell_id(1, 1)) != union_find.find(union_find.cell_id(N_ROWS-2, N_COLS-2)):
+    while union_find.count() > 1:
         row, col, is_horizontal = wall_list.pop()
 
         # Vertical wall removal
