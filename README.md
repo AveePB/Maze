@@ -34,7 +34,6 @@ A maze can be generated based on the predetermined arrangement of cells with wal
 ### Depth-first search (DFS)
 <p align="left">
   <img src="./assets/gif/dfs.gif" alt="dfs" width="200" align="right">
-  <br>
   1. Start with large grid of cells starting with four walls. 
   <br>
   <br>
@@ -50,7 +49,6 @@ A maze can be generated based on the predetermined arrangement of cells with wal
 ### Kruskal's algorithm
 <p align="left">
   <img src="./assets/gif/kruskal.gif" alt="dfs" width="200" align="right">
-  <br>
   1. Start with large grid of cells starting with four walls. Create a list of walls and a set for each cell, each containing just that one cell. 
   <br>
   <br>
