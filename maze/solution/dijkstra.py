@@ -43,20 +43,29 @@ def solve(maze, screen=None, clock=None):
         if vis[row][col]: continue
         
         # Update nearby cells
-        if not vis[row-1][col] and dist[row-1][col][1] > dist[row][col][1] + 1: # Up cell
+        if dist[row-1][col][1] > dist[row][col][1] + 1: # Up cell
             dist[row-1][col] = (DOWN, dist[row][col][1] + 1)
+        
+        if dist[row+1][col][1] > dist[row][col][1] + 1: # Down cell
+            dist[row+1][col] = (UP, dist[row][col][1] + 1)
+
+        if dist[row][col-1][1] > dist[row][col][1] + 1: # Left cell
+            dist[row][col-1] = (RIGHT, dist[row][col][1] + 1)
+
+        if dist[row][col+1][1] > dist[row][col][1] + 1: # Right cell
+            dist[row][col+1] = (LEFT, dist[row][col][1] + 1)
+
+        # Push onto the stack unvisited cells
+        if not vis[row-1][col]: # Up cell
             stck.append((row-1, col))
         
-        if not vis[row+1][col] and dist[row+1][col][1] > dist[row][col][1] + 1: # Down cell
-            dist[row+1][col] = (UP, dist[row][col][1] + 1)
+        if not vis[row+1][col]: # Down cell
             stck.append((row+1, col))
 
-        if not vis[row][col-1] and dist[row][col-1][1] > dist[row][col][1] + 1: # Left cell
-            dist[row][col-1] = (RIGHT, dist[row][col][1] + 1)
+        if not vis[row][col-1]: # Left cell
             stck.append((row, col-1))
 
-        if not vis[row][col+1] and dist[row][col+1][1] > dist[row][col][1] + 1: # Right cell
-            dist[row][col+1] = (LEFT, dist[row][col][1] + 1)
+        if not vis[row][col+1]: # Right cell
             stck.append((row, col+1))
 
         # Mark as visited
