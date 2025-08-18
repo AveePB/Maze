@@ -13,7 +13,7 @@ from collections import deque
 import numpy as np
 import pygame
 
-def solve(maze, screen=None):
+def solve(maze, screen=None, clock=None):
     """
     Solve a maze using dijkstra's algorithm with stack.
 
@@ -22,6 +22,7 @@ def solve(maze, screen=None):
     Args:
         maze (np.ndarray): 2D array representing the maze.
         screen (pygame.Surface, optional): Screen to draw maze. Defaults to None.
+        clock (pygame.time.Clock, optional): Clock controls the frame rate. Defaults to None.
 
     Returns:
         np.ndarray: 2D array representing the path.        
@@ -89,7 +90,6 @@ def solve(maze, screen=None):
 
         # Visualize solution
         if screen:
-            clock = pygame.time.Clock()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     return
