@@ -13,7 +13,7 @@ import numpy as np
 import random
 import pygame
 
-def create(screen=None):
+def create(screen=None, clock=None):
     """
     Generate a maze using Prim's algorithm.
 
@@ -22,8 +22,8 @@ def create(screen=None):
     until all cells are connected.
 
     Args:
-        screen (pygame.Surface, optional): If given, the maze 
-                                           is displayed step by step.
+        screen (pygame.Surface, optional): If given, the maze is displayed step by step.
+        clock (pygame.time.Clock, optional): Clock controls the frame rate. Defaults to None.
     
     Returns:
         np.ndarray: 2D numpy array with the final maze.
@@ -31,7 +31,6 @@ def create(screen=None):
     # Initialize maze
     maze = np.full((N_ROWS, N_COLS), WALL, dtype=np.float32)
     wall_list = []
-    clock = pygame.time.Clock()
 
     # Choose start position
     row = 2*random.randint(0, N_ROWS // 2 - 1) + 1

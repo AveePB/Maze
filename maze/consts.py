@@ -1,4 +1,11 @@
+"""
+Maze constants.
 
+This module contains essential constants that are use for the application.
+
+Author: Michał Zientek
+Date: 2025-08-10
+"""
 # MAZE SIZE
 N_ROWS, N_COLS = 15, 15
 TILE_SIZE = 45
@@ -19,5 +26,11 @@ RIGHT = 3
 MAZE_IMG_PATH = './assets/image/maze.png'
 CHEESE_IMG_PATH = './assets/image/cheese.png'
 MOUSE_IMG_PATH = './assets/image/mouse.png'
+UP_ARROW_IMG = './assets/image/up-arrow.png'
+DOWN_ARROW_IMG = './assets/image/down-arrow.png'
+LEFT_ARROW_IMG = './assets/image/left-arrow.png'
+RIGHT_ARROW_IMG = './assets/image/right-arrow.png'
 
-FPS = 100
+# Other parameters
+INF = 1_000_000_000
+FPS = 10

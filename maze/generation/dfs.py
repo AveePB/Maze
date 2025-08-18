@@ -14,7 +14,7 @@ import numpy as np
 import random
 import pygame
 
-def create(screen=None):
+def create(screen=None, clock=None):
     """
     Create a random maze using depth-first search (DFS) with stack.
     
@@ -22,6 +22,7 @@ def create(screen=None):
     
     Args:
         screen (pygame.Surface, optional): Screen to draw maze. Defaults to None.
+        clock (pygame.time.Clock, optional): Clock controls the frame rate. Defaults to None.
     
     Returns:
         np.ndarray: 2D array representing the maze.
@@ -29,7 +30,6 @@ def create(screen=None):
     # Initialize maze
     maze = np.full((N_ROWS, N_COLS), WALL, dtype=np.float32)
     vis = set()
-    clock = pygame.time.Clock()
 
     # Create chess board
     for row in range(N_ROWS):
