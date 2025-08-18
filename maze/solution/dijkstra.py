@@ -1,3 +1,12 @@
+"""
+Maze solver using dijkstra's algorithm.
+
+This module solves a maze using a variant of dijkstra's algorithm.
+It can optionally display the maze solution step-by-step using pygame.
+
+Author: Michał Zientek
+Date: 2025-08-18
+"""
 from maze.consts import UP, DOWN, LEFT, RIGHT, WALL, INF, N_ROWS, N_COLS, FPS
 from maze.visualizer import drawPath
 from collections import deque
@@ -5,6 +14,18 @@ import numpy as np
 import pygame
 
 def solve(maze, screen=None):
+    """
+    Solve a maze using dijkstra's algorithm with stack.
+
+    Optionally display maze solution step on pygame screen.
+    
+    Args:
+        maze (np.ndarray): 2D array representing the maze.
+        screen (pygame.Surface, optional): Screen to draw maze. Defaults to None.
+
+    Returns:
+        np.ndarray: 2D array representing the path.        
+    """
     # Create required structures
     dist = np.full((*maze.shape,2), (None, INF))
     vis = maze == WALL

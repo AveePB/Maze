@@ -5,9 +5,6 @@ import maze.generation.prim as prim
 import maze.solution.dijkstra as dijkstra
 import pygame
 
-# Constants
-IS_TRAINING = True
-
 # Initialize screen
 screen = pygame.display.set_mode((N_COLS * TILE_SIZE, N_ROWS * TILE_SIZE))
 pygame.display.set_icon(pygame.image.load(MAZE_IMG_PATH))
