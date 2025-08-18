@@ -79,6 +79,25 @@ A maze can be generated based on the predetermined arrangement of cells with wal
 <br>
 
 ## Maze Solving Algorithms
+Maze problem can be interpreted as the graph problem or current state analysis. Both ways are correct and we will foucs on how to execute them.
+
+### Dijkstra's algorithm
+<p align="left">
+  <img src="./assets/gif/dijkstra.gif" alt="dfs" width="200" align="right">
+  1. Initialize two arrays (visited, distances) and the stack for processing nodes.
+  <br>
+  <br>
+  2. Choose target node (cheese location), set its distance to 0 and push onto the stack.
+  <br>
+  <br>
+  3. While the stack isn't empty, pull the node and anlyze its edges and update distances array. 
+  <br>
+  <br>
+  4. After processing the edges, put onto the stack nearby nodes that haven't been visited yet.
+</p>
+<br>
+
+### Deep Q-Learning
 ...
 
 ## Installation
