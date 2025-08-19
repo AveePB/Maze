@@ -3,7 +3,7 @@ import maze.generation.dfs as dfs
 import maze.generation.kruskal as kruskal
 import maze.generation.prim as prim
 import maze.solution.dijkstra as dijkstra
-import pygame
+import pygame 
 
 # Initialize screen
 screen = pygame.display.set_mode((N_COLS * TILE_SIZE, N_ROWS * TILE_SIZE))
