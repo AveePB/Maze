@@ -33,4 +33,18 @@ RIGHT_ARROW_IMG = './assets/image/right-arrow.png'
 
 # Other parameters
 INF = 1_000_000_000
-FPS = 10
+FPS = 100
+
+# Training parameters
+MAX_MEMORY = 100_000
+BATCH_SIZE = 1000
+DECAY_RATE = 0.001
+MIN_EPSILON = 0.15
+LEARNING_RATE = 0.001
+GAMMA = 0.6
+
+# Rewards
+CRASH_PENALTY = -0.75
+GO_BACK_PENALTY = -0.5
+MOVE_COST = -0.04
+WIN_PRIZE = 1.0
