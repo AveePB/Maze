@@ -97,8 +97,24 @@ Maze problem can be interpreted as the graph problem or current state analysis. 
 </p>
 <br>
 
-### Deep Q-Learning
-...
+### Q-Learning
+Q-Learning is a value-based reinforcement learning algorithm used to find the optimal action-selection policy for an agent interacting with an environment.
+
+The algorithm maintains a Q-table, where each entry *Q(s, a)* represents the expected value of taking action *a* in state *s*. Over time, the agent updates this table to improve its decisions.
+
+The Q-value is updated using the formula:
+
+$$
+Q(s, a) \leftarrow Q(s, a) + \alpha \Big[ R + \gamma \max_{a'} Q(s', a')\Big]
+$$
+
+Where:
+- **$Q(s, a)$** – Current Q-value for state $s$ and action $a$.
+- **$\alpha$ (alpha)** – Learning rate, determining how much new information overrides old information.
+- **$R$** – Immediate reward received for taking action $a$ in state $s$.
+- **$\gamma$ (gamma)** – Discount factor, controlling the importance of future rewards.
+- **$\max_{a'} Q(s', a')$** – Maximum Q-value for the next state $s'$, representing the best possible future reward.
+
 
 ## Installation
 ...
