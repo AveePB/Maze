@@ -7,8 +7,8 @@ It can optionally display the maze solution step-by-step using pygame.
 Author: Michał Zientek
 Date: 2025-08-22
 """
-from maze.consts import LEARNING_RATE, GAMMA, N_ROWS, N_COLS, MIN_EPSILON, DECAY_RATE, CRASH_PENALTY, WIN_PRIZE, UP, DOWN, LEFT, RIGHT, FPS, QLEARNING_FPS
-from maze.visualizer import drawPath
+from maze.app.consts import LEARNING_RATE, GAMMA, N_ROWS, N_COLS, MIN_EPSILON, DECAY_RATE, CRASH_PENALTY, WIN_PRIZE, UP, DOWN, LEFT, RIGHT, FPS, QLEARNING_FPS
+from maze.app.visualizer import drawPath
 from collections import deque
 import maze.solution.env as env
 import numpy as np

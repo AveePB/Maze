@@ -1,4 +1,4 @@
-from maze.consts import N_ROWS, N_COLS, TILE_SIZE, MAZE_IMG_PATH
+from maze.app.consts import N_ROWS, N_COLS, TILE_SIZE, MAZE_IMG_PATH
 import maze.generation.kruskal as kruskal
 import maze.generation.prim as prim
 import maze.solution.dijkstra as dijkstra

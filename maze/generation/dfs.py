@@ -7,8 +7,8 @@ It can optionally display the maze generation step-by-step using pygame.
 Author: Michał Zientek
 Date: 2025-08-15
 """
-from maze.consts import N_ROWS, N_COLS, FREE_CELL, CHEESE, MOUSE, WALL, UP, DOWN, LEFT, RIGHT, DFS_FPS
-from maze.visualizer import drawMaze
+from maze.app.consts import N_ROWS, N_COLS, FREE_CELL, CHEESE, MOUSE, WALL, UP, DOWN, LEFT, RIGHT, DFS_FPS
+from maze.app.visualizer import drawMaze
 from collections import deque
 import numpy as np
 import random

@@ -6,7 +6,7 @@ This module contains basic visualization methods.
 Author: Michał Zientek
 Date: 2025-08-09
 """
-from maze.consts import CHEESE, MOUSE, WALL, N_ROWS, N_COLS, TILE_SIZE, CHEESE_IMG_PATH, MOUSE_IMG_PATH, UP, DOWN, LEFT, RIGHT, UP_ARROW_IMG, DOWN_ARROW_IMG, LEFT_ARROW_IMG, RIGHT_ARROW_IMG
+from maze.app.consts import CHEESE, MOUSE, WALL, N_ROWS, N_COLS, TILE_SIZE, CHEESE_IMG_PATH, MOUSE_IMG_PATH, UP, DOWN, LEFT, RIGHT, UP_ARROW_IMG, DOWN_ARROW_IMG, LEFT_ARROW_IMG, RIGHT_ARROW_IMG
 import pygame
 
 def drawMaze(screen, maze):

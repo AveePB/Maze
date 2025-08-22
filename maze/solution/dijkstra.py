@@ -7,8 +7,8 @@ It can optionally display the maze solution step-by-step using pygame.
 Author: Michał Zientek
 Date: 2025-08-18
 """
-from maze.consts import UP, DOWN, LEFT, RIGHT, WALL, INF, N_ROWS, N_COLS, FPS
-from maze.visualizer import drawPath
+from maze.app.consts import UP, DOWN, LEFT, RIGHT, WALL, INF, N_ROWS, N_COLS, FPS
+from maze.app.visualizer import drawPath
 from collections import deque
 import numpy as np
 import pygame

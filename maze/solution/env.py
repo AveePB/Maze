@@ -6,8 +6,8 @@ This module contains q-learning optimized maze structure.
 Author: Michał Zientek
 Date: 2025-08-22
 """
-from maze.visualizer import drawMaze
-from maze.consts import N_ROWS, N_COLS, UP, DOWN, LEFT, RIGHT, FREE_CELL, MOUSE, WALL, CRASH_PENALTY, CHEESE, WIN_PRIZE, MOVE_COST, GO_BACK_PENALTY
+from maze.app.visualizer import drawMaze
+from maze.app.consts import N_ROWS, N_COLS, UP, DOWN, LEFT, RIGHT, FREE_CELL, MOUSE, WALL, CRASH_PENALTY, CHEESE, WIN_PRIZE, MOVE_COST, GO_BACK_PENALTY
 import numpy as np
 
 class QMaze:
