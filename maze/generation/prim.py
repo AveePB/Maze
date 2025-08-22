@@ -7,7 +7,7 @@ It can optionally display the maze generation step-by-step using pygame.
 Author: Michał Zientek
 Date: 2025-08-16
 """
-from maze.consts import N_ROWS, N_COLS, FREE_CELL, CHEESE, MOUSE, WALL, FPS 
+from maze.consts import N_ROWS, N_COLS, FREE_CELL, CHEESE, MOUSE, WALL, PRIM_FPS 
 from maze.visualizer import drawMaze
 import numpy as np
 import random
@@ -50,7 +50,7 @@ def create(screen=None, clock=None):
             
         drawMaze(screen, maze)
         pygame.display.flip()
-        clock.tick(FPS)
+        clock.tick(PRIM_FPS)
 
     # Visit all cells seperated by walls
     random.shuffle(wall_list)
@@ -79,7 +79,7 @@ def create(screen=None, clock=None):
                 
             drawMaze(screen, maze)
             pygame.display.flip()
-            clock.tick(FPS)
+            clock.tick(PRIM_FPS)
     
     # Place mouse and cheese
     maze[1][1] = MOUSE
@@ -95,7 +95,7 @@ def create(screen=None, clock=None):
                 
         drawMaze(screen, maze)
         pygame.display.flip()
-        clock.tick(FPS)
+        clock.tick(PRIM_FPS)
 
     return maze
 

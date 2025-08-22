@@ -7,7 +7,7 @@ It can optionally display the maze generation step-by-step using pygame.
 Author: Michał Zientek
 Date: 2025-08-16
 """
-from maze.consts import N_ROWS, N_COLS, FREE_CELL, CHEESE, MOUSE, WALL, FPS 
+from maze.consts import N_ROWS, N_COLS, FREE_CELL, CHEESE, MOUSE, WALL, KRUSKAL_FPS 
 from maze.visualizer import drawMaze
 from collections import deque
 import numpy as np
@@ -61,7 +61,7 @@ def create(screen=None, clock=None):
                 return
         drawMaze(screen, maze)
         pygame.display.flip()
-        clock.tick(FPS)
+        clock.tick(KRUSKAL_FPS)
     
     # Shuffle walls and start maze generation
     random.shuffle(wall_list)
@@ -85,7 +85,7 @@ def create(screen=None, clock=None):
                     return
             drawMaze(screen, maze)
             pygame.display.flip()
-            clock.tick(FPS)
+            clock.tick(KRUSKAL_FPS)
     
     return maze
 

@@ -7,7 +7,7 @@ It can optionally display the maze generation step-by-step using pygame.
 Author: Michał Zientek
 Date: 2025-08-15
 """
-from maze.consts import N_ROWS, N_COLS, FREE_CELL, CHEESE, MOUSE, WALL, UP, DOWN, LEFT, RIGHT, FPS
+from maze.consts import N_ROWS, N_COLS, FREE_CELL, CHEESE, MOUSE, WALL, UP, DOWN, LEFT, RIGHT, DFS_FPS
 from maze.visualizer import drawMaze
 from collections import deque
 import numpy as np
@@ -51,7 +51,7 @@ def create(screen=None, clock=None):
             
         drawMaze(screen, maze)
         pygame.display.flip()
-        clock.tick(FPS)
+        clock.tick(DFS_FPS)
 
     # Choose start position
     row = 2*random.randint(0, N_ROWS // 2 - 1) + 1
@@ -125,6 +125,6 @@ def create(screen=None, clock=None):
                 
             drawMaze(screen, maze)
             pygame.display.flip()
-            clock.tick(FPS)
+            clock.tick(DFS_FPS)
     
     return maze

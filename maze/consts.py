@@ -33,7 +33,13 @@ RIGHT_ARROW_IMG = './assets/image/right-arrow.png'
 
 # Other parameters
 INF = 1_000_000_000
-FPS = 100
+
+# Frames per seconds
+DFS_FPS = 10
+KRUSKAL_FPS = 20
+PRIM_FPS = 30
+QLEARNING_FPS = 100
+FPS = 10
 
 # Training parameters
 MAX_MEMORY = 100_000
