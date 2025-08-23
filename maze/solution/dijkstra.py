@@ -57,15 +57,19 @@ def solve(maze, screen=None, clock=None):
 
         # Push onto the stack unvisited cells
         if not vis[row-1][col]: # Up cell
+            insertInOrder(dist, stck, (row-1, col))
             stck.append((row-1, col))
         
         if not vis[row+1][col]: # Down cell
+            insertInOrder(dist, stck, (row+1, col))
             stck.append((row+1, col))
 
         if not vis[row][col-1]: # Left cell
+            insertInOrder(dist, stck, (row, col-1))
             stck.append((row, col-1))
 
         if not vis[row][col+1]: # Right cell
+            insertInOrder(dist, stck, (row, col+1))
             stck.append((row, col+1))
 
         # Mark as visited
@@ -107,3 +111,38 @@ def solve(maze, screen=None, clock=None):
             clock.tick(FPS)
     
     return path
+
+def insertInOrder(dist, stck, pos):
+    """
+    Insert a maze cell position into the stack (deque) in ascending order of distance.
+
+    This function maintains the stack `stck` sorted by the distance values stored in `dist`.
+    It uses binary search to find the correct position and then inserts `pos` at that index.
+
+    Args:
+        dist (np.ndarray): 2D array of tuples (direction, distance) for each cell.
+                           `distance` is used to determine the order.
+        stck (collections.deque): Deque of (row, col) positions kept sorted by distance.
+        pos (tuple): (row, col) position to insert into `stck`.
+    """
+    # Create variables
+    l, mid, r = 0, None, len(stck)
+    t_row, t_col = pos
+    target = dist[t_row][t_col][1]
+
+    # Binary Search
+    while l < r:
+        # Extract distance
+        mid = (l + r) // 2
+        m_row, m_col = stck[mid]
+        val = dist[m_row][m_col][1]
+
+        # Shorten range from left
+        if val < target:
+            l = mid + 1
+        
+        # Shorten range from right
+        else:
+            r = mid
+
+    stck.insert(l, pos)

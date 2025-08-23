@@ -7,6 +7,8 @@ import pygame
 import numpy as np
 import random
 
+from collections import deque
+
 # Initialize screen
 screen = pygame.display.set_mode((N_COLS * TILE_SIZE, N_ROWS * TILE_SIZE))
 pygame.display.set_icon(pygame.image.load(MAZE_IMG_PATH))
@@ -14,4 +16,7 @@ pygame.display.set_caption('Maze')
 clock = pygame.time.Clock()
 
 maze = prim.create(screen, clock)
+dijkstra.solve(maze, screen, clock)
 qlearning.solve(maze, screen, clock)
+
+pygame.quit()
