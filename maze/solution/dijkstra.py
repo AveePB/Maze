@@ -58,19 +58,15 @@ def solve(maze, screen=None, clock=None):
         # Push onto the stack unvisited cells
         if not vis[row-1][col]: # Up cell
             insertInOrder(dist, stck, (row-1, col))
-            stck.append((row-1, col))
         
         if not vis[row+1][col]: # Down cell
             insertInOrder(dist, stck, (row+1, col))
-            stck.append((row+1, col))
 
         if not vis[row][col-1]: # Left cell
             insertInOrder(dist, stck, (row, col-1))
-            stck.append((row, col-1))
 
         if not vis[row][col+1]: # Right cell
             insertInOrder(dist, stck, (row, col+1))
-            stck.append((row, col+1))
 
         # Mark as visited
         vis[row][col] = True
