@@ -26,7 +26,7 @@ This repository is about the problem of generating and solving mazes. We will us
   - **A\* algorithm**, a well known dfs based algorithm
   - **Q-learning**, a reinforcement learning approach  
 
-  It’s important to note that while both methods are interesting, **Dijkstra’s algorithm is the preferred solution** for this problem!
+  It’s important to note that while both methods are interesting, **A\* algorithm is the preferred solution** for this problem!
 </p>
 
 ## Maze Generation Algorithms
