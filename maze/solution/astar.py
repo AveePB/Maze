@@ -114,9 +114,9 @@ def solve(maze, screen=None, clock=None):
 
 def insertInOrder(dist, stck, pos):
     """
-    Insert a maze cell position into the stack (deque) in ascending order of distance + euclidian distance.
+    Insert a maze cell position into the stack (deque) in ascending order of distance + manhattan distance.
 
-    This function maintains the stack `stck` sorted by the distance values stored in `dist` + euclidian distance.
+    This function maintains the stack `stck` sorted by the distance values stored in `dist` + manhattan distance.
     It uses binary search to find the correct position and then inserts `pos` at that index.
 
     Args:
@@ -149,7 +149,7 @@ def insertInOrder(dist, stck, pos):
 
 def computeDistanceToStart(pos):
     """
-    Compute the Euclidean distance from the given position to the starting position.
+    Compute the Manhattan distance from the given position to the starting position.
 
     The start   is assumed to be located at (1, 1), 
     typically representing the bottom-right corner of a grid offset by 2.
@@ -160,4 +160,4 @@ def computeDistanceToStart(pos):
     x = 1 - pos[0]
     y = 1 - pos[1]
 
-    return np.sqrt(x**2 + y**2)
+    return np.abs(x) + np.abs(y)

@@ -97,6 +97,26 @@ Maze problem can be interpreted as the graph problem or current state analysis. 
 </p>
 <br>
 
+### A* algorithm
+A* uses a **best-first search** approach, combining:
+
+- **Cost so far (`g(n)`)**: The actual cost to reach a node from the start.
+- **Estimated cost to goal (`h(n)`)**: A heuristic estimate of the remaining distance to the goal. The choice of heuristic greatly impacts A*'s performance:
+  - **Manhattan distance**: Used for 4-directional grid movement.
+  - **Euclidean distance**: Used when diagonal movement is allowed.
+  - **Chebyshev distance**: Used for 8-directional grid movement.
+
+It prioritizes nodes based on the evaluation function:
+
+$$
+f(n) = g(n) + h(n)
+$$
+
+Where:
+- **g(n)** is the cost from the start node to node `n`.
+- **h(n)** is the estimated cost from node `n` to the goal.
+- **f(n)** is the total estimated cost of the path through `n`.
+
 ### Q-Learning
 Q-Learning is a value-based reinforcement learning algorithm used to find the optimal action-selection policy for an agent interacting with an environment.
 
