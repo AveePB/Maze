@@ -1,26 +1,42 @@
-from maze.app.consts import N_ROWS, N_COLS, TILE_SIZE, MAZE_IMG_PATH
-import maze.generation.kruskal as kruskal
-import maze.generation.prim as prim
-import maze.generation.dfs as dfs
-import maze.solution.dijkstra as dijkstra
-import maze.solution.qlearning as qlearning
-import maze.solution.astar as astar
+from maze.app.consts import N_ROWS, N_COLS, TILE_SIZE, MAZE_IMG_PATH, FPS
+import maze.app.visualizer as visual
 import pygame 
-import numpy as np
-import random
-
-from collections import deque
+import time
 
 # Initialize screen
 screen = pygame.display.set_mode((N_COLS * TILE_SIZE, N_ROWS * TILE_SIZE))
 pygame.display.set_icon(pygame.image.load(MAZE_IMG_PATH))
 pygame.display.set_caption('Maze')
 clock = pygame.time.Clock()
+pygame.init()
 
-maze = kruskal.create(screen, clock)
-dijkstra.solve(maze, screen, clock)
-qlearning.solve(maze, screen, clock)
-astar.solve(maze, screen, clock)
+# Game parameters
+running = True
+maze = None
 
+while running:
+    # Handle user input
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+            break
+    
+        elif event.type == pygame.KEYDOWN:
+            # Show the maze
+            if event.key == pygame.K_0:
+                ...
+
+            # Generate the maze
+            elif event.key == pygame.K_1:
+                ...
+
+            # Solve the maze
+            elif event.key == pygame.K_2:
+                ...
+
+    # Draw GUI
+    visual.drawMenu(screen)
+    pygame.display.flip()
+    clock.tick(FPS)
 
 pygame.quit()

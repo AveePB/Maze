@@ -87,3 +87,36 @@ def drawPath(screen, maze, path):
                 continue
             texture = pygame.transform.scale(texture, (TILE_SIZE, TILE_SIZE))
             screen.blit(texture, rect)
+
+def drawMenu(screen: pygame.Surface):
+    # Draw background
+    bg_color = pygame.Color(204, 14, 0) # Red
+    screen.fill(bg_color)
+
+    # Draw logo
+    logo = pygame.image.load('./assets/image/maze.png')
+    logo = pygame.transform.scale(logo, (TILE_SIZE*6, TILE_SIZE*6))
+    screen.blit(logo, ((N_COLS*TILE_SIZE - logo.get_width())//2, 50))
+
+    # Draw header
+    big_font = pygame.font.Font('./assets/font/main-font.ttf', size=20)
+    header = big_font.render('Maze Menu', True, 'white')
+    screen.blit(header, ((N_COLS*TILE_SIZE - header.get_width())//2, 360))
+
+    # Draw first option
+    mid_font = pygame.font.Font('./assets/font/main-font.ttf', size=15)
+    show_label = mid_font.render('Show the maze (Press 0)', True, 'white')
+    screen.blit(show_label, ((N_COLS*TILE_SIZE - show_label.get_width())//2, 410))
+
+    # Draw second option
+    generate_label = mid_font.render('Generate the maze (Press 1)', True, 'white')
+    screen.blit(generate_label, ((N_COLS*TILE_SIZE - generate_label.get_width())//2, 460))
+
+    # Draw third option
+    solve_label = mid_font.render('Solve the maze (Press 2)', True, 'white')
+    screen.blit(solve_label, ((N_COLS*TILE_SIZE - solve_label.get_width())//2, 510))
+
+    # Draw watermark
+    watermark = pygame.image.load('./assets/image/watermark.png')
+    watermark = pygame.transform.scale(watermark, (TILE_SIZE,  TILE_SIZE))
+    screen.blit(watermark, (N_COLS*TILE_SIZE - watermark.get_width(), N_ROWS*TILE_SIZE - watermark.get_height()))
