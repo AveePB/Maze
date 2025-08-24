@@ -1,5 +1,5 @@
 # Maze 
-This repository is about the problem of generating and solving mazes. We will use some classic algorithms (e.g., DFS) and also explore Deep Q-Learning techniques.
+This repository is about the problem of generating and solving mazes. We will use some classic algorithms (e.g., DFS) and also explore Q-Learning techniques.
 
 ## Table of contents
 - [Introduction](#introduction)
@@ -23,7 +23,8 @@ This repository is about the problem of generating and solving mazes. We will us
 
   In this repository, you’ll find two very different approaches to solving mazes:  
   - **Dijkstra’s algorithm**, a classic graph-based method  
-  - **Deep Q-learning**, a reinforcement learning approach  
+  - **A\* algorithm**, a well known dfs based algorithm
+  - **Q-learning**, a reinforcement learning approach  
 
   It’s important to note that while both methods are interesting, **Dijkstra’s algorithm is the preferred solution** for this problem!
 </p>
