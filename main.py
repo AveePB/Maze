@@ -1,8 +1,10 @@
 from maze.app.consts import N_ROWS, N_COLS, TILE_SIZE, MAZE_IMG_PATH
 import maze.generation.kruskal as kruskal
 import maze.generation.prim as prim
+import maze.generation.dfs as dfs
 import maze.solution.dijkstra as dijkstra
 import maze.solution.qlearning as qlearning
+import maze.solution.astar as astar
 import pygame 
 import numpy as np
 import random
@@ -15,8 +17,10 @@ pygame.display.set_icon(pygame.image.load(MAZE_IMG_PATH))
 pygame.display.set_caption('Maze')
 clock = pygame.time.Clock()
 
-maze = prim.create(screen, clock)
+maze = kruskal.create(screen, clock)
 dijkstra.solve(maze, screen, clock)
 qlearning.solve(maze, screen, clock)
+astar.solve(maze, screen, clock)
+
 
 pygame.quit()
