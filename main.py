@@ -1,3 +1,12 @@
+"""
+Maze main file.
+
+This is the heart of our project, the main file. It contains information about execution of the 
+whole program.
+
+Author: Michał Zientek
+Date: 2025-08-25
+"""
 from maze.app.consts import N_ROWS, N_COLS, TILE_SIZE, MAZE_IMG_PATH, FPS
 import maze.app.visualizer as visual
 import maze.generation.dfs as dfs
@@ -33,8 +42,10 @@ while running:
 
                 # Generate the maze
                 elif event.key == pygame.K_1:
-                    maze = modes.generateMaze(screen, clock)
-
+                    new_maze = modes.generateMaze(screen, clock)
+                    if new_maze is not None:
+                        maze = new_maze
+                        
                 # Solve the maze
                 elif event.key == pygame.K_2:
                     modes.solveMaze(screen, clock, maze)

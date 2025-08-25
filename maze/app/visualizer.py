@@ -51,6 +51,11 @@ def drawMaze(screen, maze):
                 texture = pygame.image.load(MOUSE_IMG_PATH)
                 texture = pygame.transform.scale(texture, (TILE_SIZE, TILE_SIZE))
                 screen.blit(texture, rect)
+    
+    # Draw watermark
+    watermark = pygame.image.load('./assets/image/watermark.png')
+    watermark = pygame.transform.scale(watermark, (TILE_SIZE,  TILE_SIZE))
+    screen.blit(watermark, (N_COLS*TILE_SIZE - watermark.get_width(), N_ROWS*TILE_SIZE - watermark.get_height()))
 
 def drawPath(screen, maze, path):
     """
@@ -88,7 +93,17 @@ def drawPath(screen, maze, path):
             texture = pygame.transform.scale(texture, (TILE_SIZE, TILE_SIZE))
             screen.blit(texture, rect)
 
-def drawMenu(screen: pygame.Surface):
+def drawMenu(screen):
+    """
+    Render the main menu of the maze application.
+
+    This function draws the background, application logo, menu options,
+    and watermark on the given Pygame screen surface. It serves as the
+    visual layout for the user to interact with.
+
+    Args:
+        screen (pygame.Surface): The Pygame surface to draw the menu on.
+    """
     # Draw background
     bg_color = pygame.Color(204, 14, 0) # Red
     screen.fill(bg_color)
@@ -115,6 +130,93 @@ def drawMenu(screen: pygame.Surface):
     # Draw third option
     solve_label = mid_font.render('Solve the maze (Press 2)', True, 'white')
     screen.blit(solve_label, ((N_COLS*TILE_SIZE - solve_label.get_width())//2, 510))
+
+    # Draw watermark
+    watermark = pygame.image.load('./assets/image/watermark.png')
+    watermark = pygame.transform.scale(watermark, (TILE_SIZE,  TILE_SIZE))
+    screen.blit(watermark, (N_COLS*TILE_SIZE - watermark.get_width(), N_ROWS*TILE_SIZE - watermark.get_height()))
+
+def drawGenerationMenu(screen: pygame.Surface):
+    """
+    Render the generation menu of the maze application.
+
+    This function draws the background, application logo, menu options,
+    and watermark on the given Pygame screen surface. It serves as the
+    visual layout for the user to interact with.
+
+    Args:
+        screen (pygame.Surface): The Pygame surface to draw the menu on.
+    """
+    # Draw background
+    bg_color = pygame.Color(204, 14, 0) # Red
+    screen.fill(bg_color)
+
+    # Draw logo
+    logo = pygame.image.load('./assets/image/maze.png')
+    logo = pygame.transform.scale(logo, (TILE_SIZE*6, TILE_SIZE*6))
+    screen.blit(logo, ((N_COLS*TILE_SIZE - logo.get_width())//2, 50))
+
+    # Draw header
+    big_font = pygame.font.Font('./assets/font/main-font.ttf', size=20)
+    header = big_font.render('Maze Generation Menu', True, 'white')
+    screen.blit(header, ((N_COLS*TILE_SIZE - header.get_width())//2, 360))
+
+    # Draw first option
+    mid_font = pygame.font.Font('./assets/font/main-font.ttf', size=15)
+    dfs_label = mid_font.render('Use Depth-first search (Press 0)', True, 'white')
+    screen.blit(dfs_label, ((N_COLS*TILE_SIZE - dfs_label.get_width())//2, 410))
+
+    # Draw second option
+    kruskal_label = mid_font.render('Use Kruskal\'s algorithm (Press 1)', True, 'white')
+    screen.blit(kruskal_label, ((N_COLS*TILE_SIZE - kruskal_label.get_width())//2, 460))
+
+    # Draw third option
+    prim_label = mid_font.render('Use Prim\'s algorithm (Press 2)', True, 'white')
+    screen.blit(prim_label, ((N_COLS*TILE_SIZE - prim_label.get_width())//2, 510))
+
+    # Draw watermark
+    watermark = pygame.image.load('./assets/image/watermark.png')
+    watermark = pygame.transform.scale(watermark, (TILE_SIZE,  TILE_SIZE))
+    screen.blit(watermark, (N_COLS*TILE_SIZE - watermark.get_width(), N_ROWS*TILE_SIZE - watermark.get_height()))
+
+
+def drawSolutionMenu(screen: pygame.Surface):
+    """
+    Render the solution menu of the maze application.
+
+    This function draws the background, application logo, menu options,
+    and watermark on the given Pygame screen surface. It serves as the
+    visual layout for the user to interact with.
+
+    Args:
+        screen (pygame.Surface): The Pygame surface to draw the menu on.
+    """
+    # Draw background
+    bg_color = pygame.Color(204, 14, 0) # Red
+    screen.fill(bg_color)
+
+    # Draw logo
+    logo = pygame.image.load('./assets/image/maze.png')
+    logo = pygame.transform.scale(logo, (TILE_SIZE*6, TILE_SIZE*6))
+    screen.blit(logo, ((N_COLS*TILE_SIZE - logo.get_width())//2, 50))
+
+    # Draw header
+    big_font = pygame.font.Font('./assets/font/main-font.ttf', size=20)
+    header = big_font.render('Maze Generation Menu', True, 'white')
+    screen.blit(header, ((N_COLS*TILE_SIZE - header.get_width())//2, 360))
+
+    # Draw first option
+    mid_font = pygame.font.Font('./assets/font/main-font.ttf', size=15)
+    dijkstra_label = mid_font.render('Use Dijkstra\'s algorithm (Press 0)', True, 'white')
+    screen.blit(dijkstra_label, ((N_COLS*TILE_SIZE - dijkstra_label.get_width())//2, 410))
+
+    # Draw second option
+    astar_label = mid_font.render('Use A* algorithm (Press 1)', True, 'white')
+    screen.blit(astar_label, ((N_COLS*TILE_SIZE - astar_label.get_width())//2, 460))
+
+    # Draw third option
+    qlearning_label = mid_font.render('Use Q-learning algorithm (Press 2)', True, 'white')
+    screen.blit(qlearning_label, ((N_COLS*TILE_SIZE - qlearning_label.get_width())//2, 510))
 
     # Draw watermark
     watermark = pygame.image.load('./assets/image/watermark.png')
